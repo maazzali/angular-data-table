@@ -1,0 +1,18 @@
+<div class="table-header">
+  <div class="table-full-width">
+    <div class="header">
+      <div class="row header-table">
+        <div class="cell" *ngFor="let column of columns" [ngClass]="column.className" [class.sortable]="column.sort"
+           appDatatableSorting [ngTableSorting]="config" [column]="column"
+           (sortChanged)="getSortColumnOnly($event)">
+          <div class="column-header">
+            <div class="column-title" *ngIf="column.title" [innerHTML]="column.title"></div>
+
+            <i class="icon ascending" *ngIf="isColumnSortedAscending(column)"><img src="assets/up.svg"></i>
+            <i class="icon descending" *ngIf="isColumnSortedDescending(column)"><img src="assets/down.svg"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

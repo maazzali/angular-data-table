@@ -1,0 +1,3 @@
+<app-datatable-header [columns]="columns" [config]="config" (tableChanged)="onChangeTable(config)"></app-datatable-header>
+<app-datatable-body [columns]="columns" [rows]="rows" (updateTable)="onChangeTable(config)"></app-datatable-body>
+<app-pagination [config]="config" [totalItems]="totalRows" (tableChanged)="onChangeTable(config, $event)"></app-pagination>

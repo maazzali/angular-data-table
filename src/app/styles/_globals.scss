@@ -1,0 +1,98 @@
+@import "colors";
+
+// Sidebar
+$min-supported-display-height: 705px;
+$sidebar-width-expanded: 200px;
+$sidebar-bg-color: #0D324A;
+
+// Header
+$header-height: 95px;
+$header-vertical-padding: 32px;
+$header-horizontal-padding: 29px;
+$header-padding: $header-vertical-padding $header-horizontal-padding;
+
+// Font settings
+$base-font-size: 18px;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+// Buttons spacing
+$buttons-default-spacing: 16px;
+
+// Layout settings
+$main-content-horz-padding: 29px;
+
+@mixin truncate-text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin text-unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin graph-item-highlight-transition($property) {
+  transition: #{$property} 300ms ease;
+}
+
+$mobile-max-width: "max-width : 600px";
+$tablet-max-width: "max-width : 1400px";
+$desktop-min-width: "min-width : 1401px";
+
+@mixin desktop {
+  @media only screen and (#{$desktop-min-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (#{$tablet-max-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (#{$mobile-max-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop {
+  @media only screen and (#{$tablet-max-width}), only screen and (#{$desktop-min-width}) {
+    @content;
+  }
+}
+
+@mixin icon-size($size) {
+  width: $size;
+  height: $size;
+
+  svg {
+    max-width: $size;
+    max-height: $size;
+    min-width: $size;
+  }
+}
+
+@mixin transition($value) {
+  -webkit-transition: #{$value};
+  -moz-transition: #{$value};
+  -ms-transition: #{$value};
+  -o-transition: #{$value};
+  transition: #{$value};
+}
+
+/* Safari 10.1+ specific */
+@mixin safari-only {
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+      @content;
+    }
+  }
+}
+

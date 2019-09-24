@@ -1,0 +1,16 @@
+<div class="pagination" *ngIf="config.paging">
+  <span class="text">Items per page: </span>
+  <select *ngIf="pageSizes" [ngModel]="selectedPageSize" (ngModelChange)="pageSizeChanged($event)" class="page-size-select">
+    <option *ngFor="let pageSize of pageSizes" [value]=pageSize>{{pageSize}}</option>
+  </select>
+
+  <button class="previous button" (click)="clickPagination($event, -1)"
+      [class.disabled]="pageNo === 1">
+    Previous
+  </button>
+  <span class="text">Page {{pageNo}} of {{totalPages}}</span>
+  <button class="next button" (click)="clickPagination($event, 1)"
+      [class.disabled]="totalPages === pageNo">
+    Next
+  </button>
+</div>

@@ -1,0 +1,30 @@
+@import "../../styles/globals";
+
+:host {
+  display: table-row;
+  transition: background ease-out 0.1s;
+
+  &.highlighted {
+    background-color: $yellow-10;
+  }
+}
+
+:host(.selected) {
+  background-color: rgba($blue-50, 0.1);
+}
+
+.table-cell {
+  display: table-cell;
+  color: #262F36;
+  font-size: 1rem;
+  padding: 12px 3px;
+  font-size: 0.8571rem;
+  border-bottom: 1px solid rgba(138, 156, 167, 0.2);
+  vertical-align: middle;
+  word-break: break-all; // for IE, Edge and firefox
+  word-break: break-word; // for other browsers to overrides break-all;
+
+  &:first-of-type {
+    padding-left: $main-content-horz-padding;
+  }
+}

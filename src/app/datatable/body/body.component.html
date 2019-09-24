@@ -1,0 +1,14 @@
+<div class="table-full-width">
+  <div class="row-group">
+    <div class="table-row">
+      <div class="table-cell" *ngFor="let column of columns">
+        <input *ngIf="column.filtering" placeholder="{{column.filtering.placeholder}}"
+               class="form-control search-input"
+               appDatatableFiltering
+               [ngTableFiltering]="column.filtering"
+               (tableChanged)="onTableChange($event)"/>
+      </div>
+    </div>
+    <app-datatable-row *ngFor="let row of dataRows" [row]="row" [columns]="columns"></app-datatable-row>
+  </div>
+</div>

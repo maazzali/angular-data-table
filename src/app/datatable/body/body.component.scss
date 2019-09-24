@@ -1,0 +1,56 @@
+@import "../../styles/globals";
+
+.height-zero {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-top-width: 0px !important;
+  border-bottom-width: 0px !important;
+  height: 0px !important;
+  line-height: 0px !important;
+  overflow: hidden !important;
+  font-size: 0px !important;
+
+  i.icon {
+    margin-left: 5px;
+    max-height: 0;
+
+    svg {
+      max-height: 0;
+    }
+  }
+}
+
+.table-full-width {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.row-group {
+  display: table-row-group;
+}
+
+.table-row {
+  display: table-row;
+  transition: background ease-out 0.1s;
+}
+
+.table-cell {
+  display: table-cell;
+  color: #262F36;
+  font-size: 1rem;
+  padding: 12px 3px;
+  font-size: 0.8571rem;
+  border-bottom: 1px solid rgba(138, 156, 167, 0.2);
+  vertical-align: middle;
+  word-break: break-all; // for IE, Edge and firefox
+  word-break: break-word; // for other browsers to overrides break-all;
+
+  &:first-of-type {
+    padding-left: $main-content-horz-padding;
+  }
+}
+
+.search-input {
+  width: auto;
+}
